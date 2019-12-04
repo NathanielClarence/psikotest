@@ -16,8 +16,9 @@ class Ui(QtWidgets.QMainWindow):
         #self.ageID.setText("\xBD")
         #self.eduID.setText("\xBE")
 
-        self.setFixedSize(412, 380)
-        self.verticalLayout.setContentsMargins(20,0,20,0)
+        #self.setFixedSize(412, 380)
+        self.width(), self.height()
+        self.verticalLayout.setContentsMargins(20,20,20,20)
         self.show()
         self.pushButton.clicked.connect(self.next)
 

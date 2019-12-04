@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
-    <height>380</height>
+    <width>393</width>
+    <height>322</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,16 +16,16 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>10</y>
      <width>371</width>
-     <height>351</height>
+     <height>301</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
@@ -37,7 +37,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="0" column="1">
        <widget class="QLineEdit" name="nameID">
         <property name="font">
          <font>
@@ -49,11 +49,7 @@
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
+      <item row="1" column="0">
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
@@ -65,7 +61,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="1">
        <widget class="QLineEdit" name="ageID">
         <property name="font">
          <font>
@@ -77,11 +73,7 @@
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
+      <item row="2" column="0">
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
@@ -93,7 +85,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="2" column="1">
        <widget class="QLineEdit" name="eduID">
         <property name="font">
          <font>
@@ -102,11 +94,7 @@
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
+      <item row="3" column="0">
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
@@ -118,20 +106,7 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLineEdit" name="eduID_2">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
+      <item row="4" column="0">
        <widget class="QLabel" name="label_6">
         <property name="font">
          <font>
@@ -143,20 +118,7 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLineEdit" name="eduID_3">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
+      <item row="5" column="0">
        <widget class="QLabel" name="label_7">
         <property name="font">
          <font>
@@ -168,20 +130,7 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLineEdit" name="posID">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_7">
-      <item>
+      <item row="6" column="0">
        <widget class="QLabel" name="label_8">
         <property name="font">
          <font>
@@ -193,20 +142,7 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLineEdit" name="phoneID">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_8">
-      <item>
+      <item row="7" column="0">
        <widget class="QLabel" name="label_9">
         <property name="font">
          <font>
@@ -218,7 +154,43 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="eduID_2">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="eduID_3">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="posID">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="phoneID">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
        <widget class="QDateEdit" name="dateEdit">
         <property name="enabled">
          <bool>false</bool>

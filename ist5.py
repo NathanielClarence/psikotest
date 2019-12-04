@@ -66,11 +66,18 @@ class MyApp(QWidget):
         self.update_gui()
 
     def createLayout_group(self, question, num):
-        sgroupbox = QGroupBox(question, self)
+        sgroupbox = QGroupBox(str(num+1), self)
         self.font = QFont("Serif", 12)
         self.font.setBold(True)
         sgroupbox.setFont(self.font)
-        layout_groupbox = QHBoxLayout(sgroupbox)
+
+        question = '-\n'.join(question[i:i+80] for i in range(0, len(question), 80))
+
+        layout_vgroupbox = QVBoxLayout(sgroupbox)
+        layout_vgroupbox.addWidget(QLabel(question))
+
+        layout_groupbox = QHBoxLayout()
+        layout_vgroupbox.addLayout(layout_groupbox)
         self.q_choice = []
         for i in range(len(opts)):
             item = QCheckBox(opts[i])
