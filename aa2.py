@@ -18,7 +18,15 @@ class Ui(QtWidgets.QMainWindow):
         #self.label_2.setGeometry(QtCore.QRect(1,1,607,73))
         self.res = res
         self.workbook = workbook
-        self.show()
+        try:
+            self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.Window)
+        except Exception as e:
+            print(e)
+        # self.showMaximized()
+        self.showFullScreen()
         self.pixmap = QtGui.QPixmap(QtCore.QDir.current().absoluteFilePath('data/question/AA/2.png'))#.scaledToHeight(70)
         self.label_2.setPixmap(self.pixmap)
         self.label_2.setGeometry(QtCore.QRect(1, 1, 607, 73))

@@ -11,6 +11,11 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
         uic.loadUi('ui/main.ui', self)
         self.setWindowTitle("Psikotes")
+        self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+        self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+        #self.showMaximized()
+        self.showFullScreen()
         #print(name)
 
         self.name = identity[0]
@@ -45,7 +50,7 @@ class Ui(QtWidgets.QMainWindow):
 
             self.row+=1
 
-        self.show()
+        #self.show()
 
         self.pushButton.setText("Tes 1")
         self.pushButton.clicked.connect(lambda: self.on_click(1))
@@ -74,6 +79,7 @@ class Ui(QtWidgets.QMainWindow):
                                                   "serupa, jadi C dikecilkan, diperoleh gambar 2. maka dari itu gambar 2\n"+
                                                   "dicoret di bawahnya."] #TIU 8 mnt
             self.pushButton.setEnabled(False)
+            self.pushButton_2.setEnabled(True)
         elif _num == 2:
             self.listdat = ["Tes IST3", "5 menit", "Ditentukan tiga kata. \n"+
                                                    "Antara kata pertama dan kedua terdapat suatu hubungan tertentu.\n"+
@@ -85,6 +91,7 @@ class Ui(QtWidgets.QMainWindow):
                                                    "terdiri atas batu-batu bata. Oleh karena itu, pada lembar jawaban di belakang\n"+
                                                    "contoh 03, huruf a harus dicoret."] #IST3 5 mnt
             self.pushButton_2.setEnabled(False)
+            self.pushButton_3.setEnabled(True)
         elif _num == 3:
             self.listdat = ["Tes IST5", "10 menit", "Kolom ini terdiri atas angka-angka 1 sampai 9 dan 0. \n"+
                                                     "Untuk menunjukkan jawaban suatu soal, maka pilihlah angka-angka yang\n"
@@ -93,6 +100,7 @@ class Ui(QtWidgets.QMainWindow):
                                                     "Pada contoh, jawaban ialah 75. \n"+
                                                     "Oleh karena itu, pada lembar jawaban, angka 7 dan 5 harus dicoret."] #IST5 10 mnt
             self.pushButton_3.setEnabled(False)
+            self.pushButton_4.setEnabled(True)
         elif _num == 4:
             self.listdat = ["Tes B-S", "5 menit", "Anda akan dihadapkan pada serangkaian kombinasi angka, huruf, dan tanda baca\n"+
                                                       "tertentu. Tugas anda adalah menentukan apakah kombinasi di sebelah kiri sama\n"+
@@ -101,6 +109,7 @@ class Ui(QtWidgets.QMainWindow):
                                                       "B = Berbeda\n"+
                                                       "S = Sama"] #ADKUDAG 5 mnt
             self.pushButton_4.setEnabled(False)
+            self.pushButton_5.setEnabled(True)
         elif _num == 5:
             self.listdat = ["Tes Army Alpha", "", ""]
             '''"Pada bagian tes ini saudara jumpai dua belas soal. Tiap-tiap soal akan dibacakan\n"+
@@ -110,6 +119,7 @@ class Ui(QtWidgets.QMainWindow):
                                   "berikutnya. Jika saya belum memberi tanda STOP, saudara dapat mengisi atau \n"+
                                   "memperbaiki soal yang salah atau belum diisi."]''' #army alpha - tiap soal
             self.pushButton_5.setEnabled(False)
+            self.pushButton_6.setEnabled(True)
         elif _num == 6:
             self.listdat = ["Tes DISC", "", "Dalam persoalan ini terdapat 24 nomor soal. Dimana setiap nomor soal memiliki \n"+
                                             "4 pernyataan. Pada setiap nomor, dari ke empat pernyataan tersebut pilihlah \n"+
@@ -129,7 +139,11 @@ class Ui(QtWidgets.QMainWindow):
         self.window.ui = Ui_Dialog(self.listdat, self.workbook)
         self.window.ui.setupUi(self.window)
 
-        self.window.show()
+        '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+        self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)'''
+        self.window.showFullScreen()
+        #self.window.show()
         #self.window.ui.exButton.clicked.connect(self.closeWin)
 
     '''def closeWin(self):

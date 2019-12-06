@@ -17,7 +17,16 @@ class Ui(QtWidgets.QMainWindow):
         #self.worksheet = self.workbook.add_worksheet("AA")
         #self.ttimer.setVisible(False)
 
-        self.show()
+        try:
+            self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.Window)
+        except Exception as e:
+            print(e)
+        #self.showMaximized()
+        self.showFullScreen()
+
         self.startEx.clicked.connect(self.start)
         self.nextEx.clicked.connect(self.done)
         self.ttimer.setText("0:05")

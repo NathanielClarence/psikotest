@@ -1,6 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5 import QtWidgets
+from PyQt5 import QtCore
 import sys
 import csv
 import collections
@@ -66,9 +67,9 @@ class MyApp(QWidget):
         }
 
         self.choices = []
-        window_width = 800
+        '''window_width = 800
         window_height = 600
-        self.setFixedSize(window_width, window_height)
+        self.setFixedSize(window_width, window_height)'''
         self.initUI()
 
     def createLayout_group(self, num):#question, num):
@@ -98,7 +99,7 @@ class MyApp(QWidget):
 
     def createLayout_Container(self):
         self.scrollarea = QScrollArea(self)
-        self.scrollarea.setFixedWidth(780)
+        #self.scrollarea.setFixedWidth(780)
         self.scrollarea.setWidgetResizable(True)
 
         widget = QWidget()
@@ -120,7 +121,14 @@ class MyApp(QWidget):
         self.layout_All.addWidget(self.pushButton)
         self.pushButton.setText("Selesai")
         self.pushButton.clicked.connect(self.on_click)
-        self.show()
+        try:
+            self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        except Exception as e:
+            print(e)
+        #self.showMaximized()
+        self.showFullScreen()
 
     def calculate(self, num, row, ans):
         if discCat[num][row]=='d':

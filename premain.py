@@ -11,15 +11,20 @@ class Ui(QtWidgets.QMainWindow):
         self.cudate = QtCore.QDate.currentDate()
         self.identity = []
         self.dateEdit.setDate(self.cudate)
+        self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+        self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+        #self.showMaximized()
+        self.showFullScreen()
 
         #self.nameID.setText("\xBC")
         #self.ageID.setText("\xBD")
         #self.eduID.setText("\xBE")
 
         #self.setFixedSize(412, 380)
-        self.width(), self.height()
+        #self.width(), self.height()
         self.verticalLayout.setContentsMargins(20,20,20,20)
-        self.show()
+        #self.show()
         self.pushButton.clicked.connect(self.next)
 
     def next(self):

@@ -47,11 +47,12 @@ class MyApp(QWidget):
                          's','b','s','b','b','b','s','s','s','b',
                          'b','b','s','b','s','b','s','b','s','s',
                          'b','b','b','s','s','b','b','b','b','b']
+
         #print(len(self.answer_k))
 
-        window_width = 800
+        '''window_width = 800
         window_height = 600
-        self.setFixedSize(window_width, window_height)
+        self.setFixedSize(window_width, window_height)'''
         self.initUI()
         self.ttimer.setVisible(False)
         self.timer_start()
@@ -79,7 +80,7 @@ class MyApp(QWidget):
 
         self.update_gui()
 
-    def createLayout_group(self, question, sp = False):
+    def createLayout_group(self, question, usethis = None, sp = False):
         if sp:
             sgroupbox = QGroupBox(self.special1[question] + "   " + self.special2[question], self)
         else:
@@ -95,9 +96,9 @@ class MyApp(QWidget):
             item = QRadioButton(q_ans[i])
             self.q_choice.append(item)
             if i == 0:
-                item.toggled.connect(lambda: self.chosen(number=question, ans=0))
+                item.toggled.connect(lambda: self.chosen(number=usethis, ans=0))
             elif i == 1:
-                item.toggled.connect(lambda: self.chosen(number=question, ans=1))
+                item.toggled.connect(lambda: self.chosen(number=usethis, ans=1))
             layout_groupbox.addWidget(item)
         layout_groupbox.addStretch(1)
         self.choices.append(self.q_choice)
@@ -107,7 +108,7 @@ class MyApp(QWidget):
 
     def createLayout_Container(self):
         self.scrollarea = QScrollArea(self)
-        self.scrollarea.setFixedWidth(780)
+        #self.scrollarea.setFixedWidth(780)
         self.scrollarea.setWidgetResizable(True)
 
         widget = QWidget()
@@ -116,17 +117,20 @@ class MyApp(QWidget):
 
         #groupbox (jumlah soal)
         num = 0
-        for q in range(len(q1)):
-            if q1[q] == "-":
-                '''label = QLabel(self)
-                pixmap = QPixmap('data/question/adkudag_support/'+str(num)+'.png').scaledToHeight(20)
-                #pixmap = pixmap.scaledToHeight(15)
-                label.setPixmap(pixmap)
-                self.layout_SArea.addWidget(label)'''
-                self.layout_SArea.addWidget(self.createLayout_group(num, sp = True))
-                num += 1
-            else:
-                self.layout_SArea.addWidget(self.createLayout_group(q))
+        try:
+            for q in range(len(q1)):
+                if q1[q] == "-":
+                    '''label = QLabel(self)
+                    pixmap = QPixmap('data/question/adkudag_support/'+str(num)+'.png').scaledToHeight(20)
+                    #pixmap = pixmap.scaledToHeight(15)
+                    label.setPixmap(pixmap)
+                    self.layout_SArea.addWidget(label)'''
+                    self.layout_SArea.addWidget(self.createLayout_group(num, q, sp = True))
+                    num += 1
+                else:
+                    self.layout_SArea.addWidget(self.createLayout_group(q, q))
+        except Exception as e:
+            print(e)
             #num +=1
         self.layout_SArea.addStretch(1)
 
@@ -145,7 +149,14 @@ class MyApp(QWidget):
         self.layout_All.addWidget(self.pushButton)
         self.pushButton.setText("Selesai")
         self.pushButton.clicked.connect(self.on_click)
-        self.show()
+        try:
+            self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        except Exception as e:
+            print(e)
+        #self.showMaximized()
+        self.showFullScreen()
 
     def chosen(self, number, ans):
         #print(number)
@@ -153,6 +164,7 @@ class MyApp(QWidget):
         #print(hex(id(ans)))
         #print(self.choices[number][ans].text())
         self.q_answer[number]=self.choices[number][ans].text()
+        print(str(self.q_answer))
         #print(str(self.q_answer))
         #print(str(self.q_answer))
 

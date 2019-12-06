@@ -59,8 +59,12 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.labelfont.setBold(True)
 
         self.dial = Dialog
+        self.dial.setWindowFlag(QtCore.Qt.WindowCloseButtonHint,False)
+        self.dial.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+        self.dial.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+
         Dialog.setObjectName("Dialog")
-        Dialog.setFixedSize(540, 400)
+        Dialog.setFixedSize(800, 500)
         #Dialog.setWindowFlag(self.windowFlags() & ~QtCore.Qt.WindowCloseButtonHint)
         self.verticalLayoutWidget = QtWidgets.QWidget(Dialog)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 520, 351))
@@ -192,21 +196,46 @@ class Ui_Dialog(QtWidgets.QDialog):
         if self.listdata[0]=="Tes TIU":
             self.window = QtWidgets.QWidget()
             self.window.ui = TIU(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
+            #self.window.showMaximized()
         elif self.listdata[0]=="Tes IST3":
             self.window = QtWidgets.QWidget()
             self.window.ui = IST3(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
         elif self.listdata[0]=="Tes IST5":
             self.window = QtWidgets.QWidget()
             self.window.ui = IST5(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
         elif self.listdata[0]=="Tes B-S":
             self.window = QtWidgets.QWidget()
             self.window.ui = Adkudag(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
         elif self.listdata[0]=="Tes Army Alpha":
             self.window = QtWidgets.QWidget()
             #print(self.listdata[0])
             self.window.ui = ArmyAlpha1(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
         elif self.listdata[0]=="Tes DISC":
             self.window = QtWidgets.QWidget()
             self.window.ui = DISC(self.workbook)
+            '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+            self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.window.showMaximized()'''
 
         self.dial.close()

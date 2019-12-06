@@ -38,9 +38,9 @@ class MyApp(QWidget):
                          'B','D','B','E','D',
                          'C','C','C','C','D',
                          'C','C','E','E','E']
-        window_width = 800
+        '''window_width = 800
         window_height = 600
-        self.setFixedSize(window_width, window_height)
+        self.setFixedSize(window_width, window_height)'''
         self.initUI()
         self.ttimer.setVisible(False)
         self.timer_start()
@@ -99,7 +99,7 @@ class MyApp(QWidget):
 
     def createLayout_Container(self):
         self.scrollarea = QScrollArea(self)
-        self.scrollarea.setFixedWidth(780)
+        #self.scrollarea.setFixedWidth(780)
         self.scrollarea.setWidgetResizable(True)
 
         widget = QWidget()
@@ -129,7 +129,14 @@ class MyApp(QWidget):
         self.pushButton.setText("Selesai")
         self.pushButton.clicked.connect(self.on_click)
         #self.layout_All.setSpacing(0)
-        self.show()
+        try:
+            self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
+            self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
+        except Exception as e:
+            print(e)
+        #self.showMaximized()
+        self.showFullScreen()
 
     def chosen(self, number, ans):
         #print(number)
