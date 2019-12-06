@@ -9,3 +9,4 @@ Integrasi dengan basis data dalam proses.
 - Perubahan windowed ke fullscreen
 - Perubahan UI utama
 - Perubahan sistem pengerjaan tes
+- Pengguna tidak dapat meng-klik close, minimize, dan maximize saat mengerjakan soal
