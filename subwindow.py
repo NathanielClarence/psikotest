@@ -18,8 +18,9 @@ from PyQt5 import QtMultimedia
 import xlsxwriter
 
 class Ui_Dialog(QtWidgets.QDialog):
-    def __init__(self, listdat, workbook):
+    def __init__(self, listdat, workbook, parentWin = None):
         self.listdata = listdat
+        self.parentWin = parentWin
 
         #print(self.listdata)
         self.workbook = workbook
@@ -160,9 +161,6 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pButton.setObjectName("pButton")
         self.verticalLayout.addWidget(self.pButton)
-        #self.exButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        #self.exButton.setObjectName("exButton")
-        #self.verticalLayout.addWidget(self.exButton)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -195,7 +193,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pButton.setEnabled(False)
         if self.listdata[0]=="Tes TIU":
             self.window = QtWidgets.QWidget()
-            self.window.ui = TIU(self.workbook)
+            self.window.ui = TIU(self.workbook, self.parentWin)
             '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
@@ -203,21 +201,21 @@ class Ui_Dialog(QtWidgets.QDialog):
             #self.window.showMaximized()
         elif self.listdata[0]=="Tes IST3":
             self.window = QtWidgets.QWidget()
-            self.window.ui = IST3(self.workbook)
+            self.window.ui = IST3(self.workbook, self.parentWin)
             '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
             self.window.showMaximized()'''
         elif self.listdata[0]=="Tes IST5":
             self.window = QtWidgets.QWidget()
-            self.window.ui = IST5(self.workbook)
+            self.window.ui = IST5(self.workbook, self.parentWin)
             '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
             self.window.showMaximized()'''
         elif self.listdata[0]=="Tes B-S":
             self.window = QtWidgets.QWidget()
-            self.window.ui = Adkudag(self.workbook)
+            self.window.ui = Adkudag(self.workbook, self.parentWin)
             '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)
@@ -232,7 +230,7 @@ class Ui_Dialog(QtWidgets.QDialog):
             self.window.showMaximized()'''
         elif self.listdata[0]=="Tes DISC":
             self.window = QtWidgets.QWidget()
-            self.window.ui = DISC(self.workbook)
+            self.window.ui = DISC(self.workbook, self.parentWin)
             '''self.window.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, False)
             self.window.setWindowFlag(QtCore.Qt.WindowMaximizeButtonHint, False)

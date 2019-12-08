@@ -23,21 +23,22 @@ with open("data/question/ist3.csv") as csv_file:
 DURATION_INT= 300
 
 class MyApp(QWidget):
-    def __init__(self, workbook):
+    def __init__(self, workbook, parentWin):
         super(MyApp, self).__init__()
         self.setWindowTitle("Tes IST3")
 
         self.q_answer = []
         self.choices = []
+        self.parentWin = parentWin
 
         self.workbook = workbook[0]
         self.namedate = workbook[1]
-        self.worksheet = self.workbook.add_worksheet("IST3")
+        #self.worksheet = self.workbook.add_worksheet("IST3")
 
-        self.answer_k = ['C','E','D','D','D',
+        '''self.answer_k = ['C','E','D','D','D',
                          'B','D','B','E','D',
                          'C','C','C','C','D',
-                         'C','C','E','E','E']
+                         'C','C','E','E','E']'''
         '''window_width = 800
         window_height = 600
         self.setFixedSize(window_width, window_height)'''
@@ -139,67 +140,10 @@ class MyApp(QWidget):
         self.showFullScreen()
 
     def chosen(self, number, ans):
-        #print(number)
-        #print("answer saved for "+str(number))
-        #print(hex(id(ans)))
-        #print(self.choices[number][ans].text())
-        #self.q_answer[number]=self.choices[number][ans].text()
         self.q_answer[number]=ans
         #print(str(self.q_answer))
 
     def on_click(self):
         #print("saved")
-        self.res = []
-        for i in range(len(self.q_answer)):
-            if self.q_answer[i]==self.answer_k[i]:
-                self.res.append(1)
-            else:
-                self.res.append(0)
-        #print(self.res)
-        #print(sum(self.res))
-
-        row = 0
-        col = 0
-        self.header = self.workbook.add_format({'bold': True})
-        self.fill = self.workbook.add_format({'bg_color': 'lime'})
-        self.desired = self.workbook.add_format({'bg_color': 'cyan'})
-        self.worksheet.write(0, 0, 'Kunci Jawaban', self.header)
-        self.worksheet.write(0, 1, 'Jawaban', self.header)
-        self.worksheet.write(0, 2, 'Skor', self.header)
-        row += 1
-        for x in range(len(self.answer_k)):
-            self.worksheet.write(row, col, self.answer_k[x], self.desired)
-            self.worksheet.write(row, col + 1, self.q_answer[x], self.fill)
-            self.worksheet.write(row, col + 2, self.res[x], self.fill)
-            row += 1
-
-        self.worksheet.write(row, 1, "Total", self.header)
-        self.worksheet.write(row, 2, "=SUM(C2:C" + str(row) + ")", self.fill)
-
-        self.worksheet.write(1, 5, 'RS', self.header)
-        self.worksheet.write(1, 6, '=C' + str(row + 1), self.fill)
-        self.worksheet.write(2, 5, 'WS', self.header)
-        self.worksheet.write(2, 6, '=(G2*8)+44', self.fill)
-        self.worksheet.write(2, 7, "=IF(G3<=78,1,IF(G3<=107,2,IF(G3<=136,3,IF(G3<=165,4,5))))")
-        self.worksheet.write(3, 5, 'Scale', self.header)
-        self.worksheet.write_formula(3, 6,
-                                     '=IF(G3<=78,"(1) Rendah",IF(G3<=107,"(2) Rata-rata Bawah",IF(G3<=136, "(3) Sedang", IF(G3<=165, "(4) Rata-rata atas", "(5) Tinggi"))))',
-                                     self.fill)
-
-        '''self.worksheet.write(1, 8, "Nama", self.header)
-        self.worksheet.write(1, 9, self.namedate[0], self.fill)
-        self.worksheet.write(2, 8, "Usia", self.header)
-        self.worksheet.write(2, 9, (datetime.date.today().year - self.namedate[1].year), self.fill)
-        self.worksheet.write(2, 10, str(self.namedate[1]))
-'''
+        self.parentWin.autosave(ans_ist3= self.q_answer)
         self.close()
-        #print(str(self.choices))
-        #go save here
-        #for x in self.choices:
-        #    for y in x:
-        #        print(y.text())
-
-#if __name__ == "__main__":
-#    app = QApplication(sys.argv)
-#    window = MyApp()
-#    sys.exit(app.exec_())

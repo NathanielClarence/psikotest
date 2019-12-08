@@ -9,15 +9,16 @@ import datetime
 DURATION_INT= 480
 
 class MyApp(QWidget):
-    def __init__(self, workbook):
+    def __init__(self, workbook, parentWin):
         super(MyApp, self).__init__()
         self.setWindowTitle("Tes TIU")
         self.q_answer = []
         self.choices = []
 
+        self.parentWin = parentWin
         self.workbook = workbook[0]
         self.namedate = workbook[1]
-        self.worksheet = self.workbook.add_worksheet("TIU")
+        #self.worksheet = self.workbook.add_worksheet("TIU")
 
         self.answer_k = ['B','E','D','D','E',
                          'D','E','A','E','C',
@@ -148,51 +149,10 @@ class MyApp(QWidget):
 
     def on_click(self):
         #print("saved")
-        self.res = []
-        for i in range(len(self.q_answer)):
-            if self.q_answer[i] == self.answer_k[i]:
-                self.res.append(1)
-            else:
-                self.res.append(0)
-        #print(self.res)
-        #print(sum(self.res))
-
-        row = 0
-        col = 0
-        self.header = self.workbook.add_format({'bold': True})
-        self.fill = self.workbook.add_format({'bg_color': 'lime'})
-        self.desired = self.workbook.add_format({'bg_color': 'cyan'})
-        self.worksheet.write(0,0,'Kunci Jawaban', self.header)
-        self.worksheet.write(0, 1, 'Jawaban', self.header)
-        self.worksheet.write(0,2,'Skor', self.header)
-        row+=1
-        for x in range(len(self.answer_k)):
-            self.worksheet.write(row, col, self.answer_k[x], self.desired)
-            self.worksheet.write(row,col+1,self.q_answer[x], self.fill)
-            self.worksheet.write(row, col+2, self.res[x], self.fill)
-            row+=1
-
-        self.worksheet.write(row, 1, "Total", self.header)
-        self.worksheet.write(row, 2, "=SUM(C2:C"+str(row)+")", self.fill)
-        #self.workbook.close()
-
-        self.worksheet.write(1, 5, 'RS', self.header)
-        self.worksheet.write(1, 6, '=C' + str(row + 1), self.fill)
-        self.worksheet.write(2, 5, 'WS', self.header)
-        self.worksheet.write(2, 6, '=IF(G2<=1,2,IF(G2<=5,4,IF(G2<=7,5,IF(G2<=9,6,IF(G2<=11,7,IF(G2<=13,8,IF(G2<=15,9,'+
-                                   'IF(G2<=17,10,IF(G2<=19,11,IF(G2<=21,12,IF(G2<=23,13,IF(G2<=25,14,IF(G3<=27,15,IF'+
-                                   '(G2<=29,16,17))))))))))))))', self.fill)
-        self.worksheet.write(2, 7, '=IF(G3<=2,1, IF(G3<=6,2,IF(G3<=11,3,IF(G3<=15,4,5))))')
-        self.worksheet.write(3, 5, 'Scale', self.header)
-        self.worksheet.write_formula(3, 6,
-                                     '=IF(G3<=6,"(1) Rendah",IF(G3<=12,"(2) Rata-rata Bawah",IF(G3<=18, "(3) Sedang", IF(G3<=24, "(4) Rata-rata atas", "(5) Tinggi"))))',
-                                     self.fill)
-
-        '''self.worksheet.write(1, 8, "Nama", self.header)
-        self.worksheet.write(1, 9, self.namedate[0], self.fill)
-        #self.worksheet.write(2, 8, "Usia", self.header)'''
-        #self.worksheet.write(2, 9, (datetime.date.today().year - self.namedate[1].year), self.fill)
-        #self.worksheet.write(2, 10, str(self.namedate[1]))
+        try:
+            self.parentWin.autosave(ans_tiu= self.q_answer)
+        except Exception as e:
+            print(e)
 
         self.close()
         #print(str(self.choices))

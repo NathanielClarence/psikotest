@@ -20,7 +20,7 @@ with open("data/question/adkudag.csv") as csv_file:
 DURATION_INT = 300
 
 class MyApp(QWidget):
-    def __init__(self, workbook):
+    def __init__(self, workbook, parentWin):
         super(MyApp, self).__init__()
         self.setWindowTitle("Tes ADKUDAG")
         self.q_answer = []
@@ -30,26 +30,7 @@ class MyApp(QWidget):
 
         self.workbook = workbook[0]
         self.namedate = workbook[1]
-        self.worksheet = self.workbook.add_worksheet("ADKUDAG")
-
-        self.answer_k = ['s','s','b','b','s','s','b','s','b','b',
-                         's','b','s','s','s','b','s','s','s','s',
-                         'b','b','b','b','s','s','s','b','b','b',
-                         'b','b','b','b','b','b','b','b','s','b',
-                         's','b','s','b','b','b','b','s','s','b',
-                         'b','b','b','b','b','s','s','b','b','s',
-                         's','b','b','b','b','s','s','b','s','s',
-                         's','b','b','s','b','s','b','s','s','s',
-                         's','s','b','b','b','s','b','s','s','b',
-                         's','s','s','s','b','s','s','s','s','s',
-                         's','b','s','b','s','b','s','s','b','b',
-                         'b','s','s','s','b','b','s','s','b','b',
-                         's','b','s','b','b','b','s','s','s','b',
-                         'b','b','s','b','s','b','s','b','s','s',
-                         'b','b','b','s','s','b','b','b','b','b']
-
-        #print(len(self.answer_k))
-
+        self.parentWin = parentWin
         '''window_width = 800
         window_height = 600
         self.setFixedSize(window_width, window_height)'''
@@ -159,65 +140,9 @@ class MyApp(QWidget):
         self.showFullScreen()
 
     def chosen(self, number, ans):
-        #print(number)
-        #print("answer saved for "+str(number))
-        #print(hex(id(ans)))
-        #print(self.choices[number][ans].text())
         self.q_answer[number]=self.choices[number][ans].text()
-        print(str(self.q_answer))
-        #print(str(self.q_answer))
-        #print(str(self.q_answer))
 
     def on_click(self):
         #print("saved")
-
-        self.res = []
-        for x in range(len(self.q_answer)):
-            if self.q_answer[x].lower()==self.answer_k[x]:
-                self.res.append(1)
-            else:
-                self.res.append(0)
-        #print(self.res)
-
-        row = 0
-        col = 0
-        self.header = self.workbook.add_format({'bold': True})
-        self.fill = self.workbook.add_format({'bg_color': 'lime'})
-        self.desired = self.workbook.add_format({'bg_color': 'cyan'})
-        self.percentage = self.workbook.add_format({'num_format': '0.00%', 'bg_color':'lime'})
-        self.worksheet.write(0, 0, 'Kunci Jawaban', self.header)
-        self.worksheet.write(0, 1, 'Jawaban', self.header)
-        self.worksheet.write(0, 2, 'Skor', self.header)
-        self.worksheet.write(0, 3, 'Percentile', self.header)
-        row += 1
-        for x in range(len(self.answer_k)):
-            self.worksheet.write(row, col, self.answer_k[x], self.desired)
-            self.worksheet.write(row, col + 1, self.q_answer[x], self.fill)
-            self.worksheet.write(row, col + 2, self.res[x], self.fill)
-            row += 1
-
-        self.worksheet.write(row, 1, "Total", self.header)
-        self.worksheet.write(row, 2, "=SUM(C2:C" + str(row) + ")", self.fill)
-        self.worksheet.write(1,3, "=(C"+str(row+1)+"/150)", self.percentage)
-        self.worksheet.write(1, 5, 'Scale', self.header)
-        self.worksheet.write_formula(1, 6,
-                                     '=IF(D2<60%,"Kurang",IF(D2<81%,"Cukup",IF(D2<101%,"Baik")))',
-                                     self.fill)
-
-        '''self.worksheet.write(1, 8, "Nama", self.header)
-        self.worksheet.write(1, 9, self.namedate[0], self.fill)
-        self.worksheet.write(2, 8, "Usia", self.header)
-        self.worksheet.write(2, 9, (datetime.date.today().year - self.namedate[1].year), self.fill)
-        self.worksheet.write(2, 10, str(self.namedate[1]))
-'''
+        self.parentWin.autosave(ans_adkudag= self.q_answer)
         self.close()
-        #print(str(self.choices))
-        #go save here
-        #for x in self.choices:
-        #    for y in x:
-        #        print(y.text())
-
-#if __name__ == "__main__":
-#    app = QApplication(sys.argv)
-#    window = MyApp()
-#    sys.exit(app.exec_())

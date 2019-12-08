@@ -20,7 +20,6 @@ class Ui(QtWidgets.QMainWindow):
         self.res = res
 
         self.workbook = workbook[0]
-        self.worksheet = self.workbook.add_worksheet("AA")
 
         self.namedate = workbook[1]
         self.mainWin = workbook[2]
@@ -141,39 +140,6 @@ class Ui(QtWidgets.QMainWindow):
 
         #print(sum(self.res))
         self.mainWin.setAAResult(_num = sum(self.res))
+        self.mainWin.autosave(ans_aa= self.res)
 
-        row = 0
-        col = 0
-        self.header = self.workbook.add_format({'bold': True})
-        self.fill = self.workbook.add_format({'bg_color': 'lime'})
-        self.worksheet.write(0, 0, 'Kunci Jawaban', self.header)
-        self.worksheet.write(0, 1, 'Jawaban', self.header)
-        self.worksheet.write(0, 2, 'Skor', self.header)
-        row += 1
-        for x in range(len(self.res)):
-            self.worksheet.write(row, col + 2, self.res[x], self.fill)
-            row += 1
-
-        self.worksheet.write(row,1, "Total", self.header)
-        self.worksheet.write(row, 2, "=SUM(C2:C" + str(row) + ")", self.fill)
-        #save mechanism
-
-        self.worksheet.write(1, 5, 'RS', self.header)
-        self.worksheet.write(1, 6, '=C' + str(row + 1), self.fill)
-        self.worksheet.write(2, 5, 'Scale', self.header)
-        self.worksheet.write_formula(2, 6,
-                                     '=IF(G2<6,"Kurang",IF(G2<9,"Cukup",IF(G2<13,"Baik")))',
-                                     self.fill)
-
-        '''self.worksheet.write(1, 8, "Nama", self.header)
-        self.worksheet.write(1, 9, self.namedate[0], self.fill)
-        self.worksheet.write(2, 8, "Usia", self.header)
-        self.worksheet.write(2, 9, (datetime.date.today().year - self.namedate[1].year), self.fill)
-        self.worksheet.write(2, 10, str(self.namedate[1]))
-'''
         self.close()
-
-'''if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = Ui()
-    sys.exit(app.exec_())'''
