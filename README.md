@@ -13,3 +13,4 @@ Integrasi dengan basis data dalam proses.
 #Update 1.3.0
 
 - Penambahan fitur autosave setelah mengerjakan satu tes
+- Pengguna tidak dapat meng-klik close, minimize, dan maximize saat mengerjakan soal

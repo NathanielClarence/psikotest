@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20f5b84d-17db-4f3c-8b46-62cd56c2b271" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa12.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adkudag.py" beforeDir="false" afterPath="$PROJECT_DIR$/adkudag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disc.py" beforeDir="false" afterPath="$PROJECT_DIR$/disc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ist3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ist3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ist5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ist5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/subwindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,22 +195,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1575777145147" />
-    <state width="1308" height="176" key="GridCell.Tab.0.bottom" timestamp="1575782340199">
+    <state width="1308" height="176" key="GridCell.Tab.0.bottom" timestamp="1575783601977">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
-    <state width="1308" height="176" key="GridCell.Tab.0.center" timestamp="1575782340199">
+    <state width="1308" height="176" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
+    <state width="1308" height="176" key="GridCell.Tab.0.center" timestamp="1575783601977">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
-    <state width="1308" height="176" key="GridCell.Tab.0.left" timestamp="1575782340199">
+    <state width="1308" height="176" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
+    <state width="1308" height="176" key="GridCell.Tab.0.left" timestamp="1575783601977">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
-    <state width="1308" height="176" key="GridCell.Tab.0.right" timestamp="1575782340199">
+    <state width="1308" height="176" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
+    <state width="1308" height="176" key="GridCell.Tab.0.right" timestamp="1575783601977">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
+    <state width="1308" height="176" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
     <state x="378" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1575775519289">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
