@@ -3,30 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="20f5b84d-17db-4f3c-8b46-62cd56c2b271" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AA1.py" beforeDir="false" afterPath="$PROJECT_DIR$/AA1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa10.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa11.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aa12.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa2.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa3.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa4.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa5.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa6.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa7.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa8.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa9.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa9.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adkudag.py" beforeDir="false" afterPath="$PROJECT_DIR$/adkudag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disc.py" beforeDir="false" afterPath="$PROJECT_DIR$/disc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ist3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ist3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ist5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ist5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/premain.py" beforeDir="false" afterPath="$PROJECT_DIR$/premain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/subwindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/AA2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AA2.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main.ui" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,21 +30,16 @@
   </component>
   <component name="ProjectId" id="1R2ZN4etKDg8C7co4R3i9rZEOhB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tiu.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/tiu.py" />
   </component>
   <component name="RunManager" selected="Python.main (1)">
     <configuration name="XLSDataInputTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -177,13 +158,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -211,5 +194,35 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="102" y="110" width="1146" height="528" key="DiffContextDialog" timestamp="1575777173867">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="102" y="110" width="1146" height="528" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1575777173867" />
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1575777145147">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1575777145147" />
+    <state width="1308" height="176" key="GridCell.Tab.0.bottom" timestamp="1575782340199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1308" height="176" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
+    <state width="1308" height="176" key="GridCell.Tab.0.center" timestamp="1575782340199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1308" height="176" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
+    <state width="1308" height="176" key="GridCell.Tab.0.left" timestamp="1575782340199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1308" height="176" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
+    <state width="1308" height="176" key="GridCell.Tab.0.right" timestamp="1575782340199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1308" height="176" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1575782340199" />
+    <state x="378" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1575775519289">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="378" y="206" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1575775519289" />
   </component>
 </project>

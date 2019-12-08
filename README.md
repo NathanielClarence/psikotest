@@ -9,3 +9,7 @@ Integrasi dengan basis data dalam proses.
 - Perubahan windowed ke fullscreen
 - Perubahan UI utama
 - Perubahan sistem pengerjaan tes
+
+#Update 1.3.0
+
+- Penambahan fitur autosave setelah mengerjakan satu tes
