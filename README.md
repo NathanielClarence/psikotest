@@ -20,3 +20,14 @@ Integrasi dengan basis data dalam proses.
 
 - Penambahan fitur autosave setiap setelah menyelesaikan satu tes
 - Pengguna tidak dapat meng-klik close, minimize, dan maximize saat mengerjakan soal
+
+#Update 1.4.0:
+
+- Menghubungkan ke database
+- Tambahan aplikasi untuk export hasil dari DB ke excel
+
+#Update 1.4.1:
+- DB bug fixes
+
+#Update 1.4.2:
+- Excel-to-DB bug fixes
