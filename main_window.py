@@ -1,10 +1,10 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5 import QtCore, QtGui
-import sys
+from math import ceil, floor
 from subwindow import Ui_Dialog
 import xlsxwriter
 import datetime
-#import XLSDataInputTest
+import XLSDataInputTest
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self, identity):
@@ -22,6 +22,12 @@ class Ui(QtWidgets.QMainWindow):
         self.date = identity[7]
         self.ident = identity
         self.AAresult=0
+
+        self.tiu_res=0
+        self.ist3_res=0
+        self.ist5_res=0
+        self.adkudag_res =0
+        self.strRes = "Blm"
 
         #print(datetime.date.today())
         self.workname = 'data/result/'+self.name+'_'+str(datetime.date.today())+'.xlsx'
@@ -159,6 +165,9 @@ class Ui(QtWidgets.QMainWindow):
             self.worksheet.write_formula(3, 6,
                                          '=IF(G3<=6,"(1) Rendah",IF(G3<=12,"(2) Rata-rata Bawah",IF(G3<=18, "(3) Sedang", IF(G3<=24, "(4) Rata-rata atas", "(5) Tinggi"))))',
                                          self.fill)
+
+            self.tiu_res = ceil(sum(self.res)+3/2)
+
         except Exception as e:
             print("Save TIU gagal")
             print(e)
@@ -209,6 +218,18 @@ class Ui(QtWidgets.QMainWindow):
             self.worksheet.write_formula(3, 6,
                                          '=IF(G3<=78,"(1) Rendah",IF(G3<=107,"(2) Rata-rata Bawah",IF(G3<=136, "(3) Sedang", IF(G3<=165, "(4) Rata-rata atas", "(5) Tinggi"))))',
                                          self.fill)
+
+            self.ist3_res = (sum(self.res)*8)+44
+            if self.ist3_res <= 78:
+                self.ist3_res = 1
+            elif self.ist3_res <= 107:
+                self.ist3_res = 2
+            elif self.ist3_res <=136:
+                self.ist3_res = 3
+            elif self.ist3_res <= 165:
+                self.ist3_res = 4
+            else:
+                self.ist3_res = 5
         except Exception as e:
             print(e)
 
@@ -258,6 +279,17 @@ class Ui(QtWidgets.QMainWindow):
             self.worksheet.write_formula(3, 6,
                                          '=IF(G3<=82,"(1) Rendah",IF(G3<=99,"(2) Rata-rata Bawah",IF(G3<=115, "(3) Sedang", IF(G3<=132, "(4) Rata-rata atas", "(5) Tinggi"))))',
                                          self.fill)
+            self.ist5_res = (sum(self.res)*5)+60
+            if self.ist5_res<=82:
+                self.ist5_res = 1
+            elif self.ist5_res<=99:
+                self.ist5_res = 2
+            elif self.ist5_res<115:
+                self.ist5_res = 3
+            elif self.ist5_res<132:
+                self.ist5_res = 4
+            else:
+                self.ist5_res = 5
         except Exception as e:
             print(e)
 
@@ -316,6 +348,7 @@ class Ui(QtWidgets.QMainWindow):
             self.worksheet.write_formula(1, 6,
                                          '=IF(D2<60%,"Kurang",IF(D2<81%,"Cukup",IF(D2<101%,"Baik")))',
                                          self.fill)
+            self.adkudag_res = sum(self.res)
         except Exception as e:
             print(e)
 
@@ -497,21 +530,42 @@ class Ui(QtWidgets.QMainWindow):
             self.rekap.merge_range('R3:R4', mergelist[6], self.mergeformat)
 
             self.rekap.write(4, 1, self.name, self.border)
-            self.rekap.write(4, 2, "='TIU'!H3", self.border)
-            self.rekap.write(4, 3, "='IST3'!H3", self.border)
-            self.rekap.write(4, 4, "='IST5'!H3", self.border)
-            self.rekap.write(4, 5, "='ADKUDAG'!D2", self.border)
+            self.rekap.write(4, 2, self.tiu_res, self.border)
+            self.rekap.write(4, 3, self.ist3_res, self.border)
+            self.rekap.write(4, 4, self.ist5_res, self.border)
+            self.rekap.write(4, 5, floor(self.adkudag_res/150*100)/100, self.border)
             self.rekap.write(4, 6, self.AAresult, self.border)
-            self.rekap.write(4, 7, "='DISC'!H12", self.border)
+            self.rekap.write(4, 7, self.strRes, self.border)
             self.rekap.write(4, 8, self.ident[5], self.border)
             self.rekap.write(4, 9, self.ident[1], self.border)
             self.rekap.write(4, 10, self.ident[2], self.border)
             self.rekap.write(4, 11, self.ident[6], self.border)
-            self.rekap.write(4, 12, "=SUM(C5:E5)/3", self.border)
-            self.rekap.write(4, 13, '=IF(M5<2,"Sangat Kurang",IF(M5<2.6,"Kurang",IF(M5<3.1,"Cukup",IF(M5<4.1,"Baik"))))',
-                             self.border)
-            self.rekap.write(4, 14, '=IF(F5<60%,"Kurang",IF(F5<81%,"Cukup",IF(F5<101%,"Baik")))', self.border)
-            self.rekap.write(4, 15, '=IF(G5<6,"Kurang",IF(G5<9,"Cukup",IF(G5<13,"Baik")))', self.border)
+            self.rekap.write(4, 12, floor((self.tiu_res+self.ist3_res+self.ist5_res)/3*100)/100, self.border)
+            if (self.tiu_res+self.ist3_res+self.ist5_res)/3 < 2:
+                self.pot_ws = "Sgt Kurang"
+            elif (self.tiu_res+self.ist3_res+self.ist5_res)/3 < 2.6:
+                self.pot_ws = "Kurang"
+            elif (self.tiu_res+self.ist3_res+self.ist5_res)/3 <3.1:
+                self.pot_ws = "Cukup"
+            else:
+                self.pot_ws = "Baik"
+            self.rekap.write(4, 13, self.pot_ws, self.border)
+
+            if self.adkudag_res/150 < 0.6:
+                self.ketelitian = "Kurang"
+            elif self.adkudag_res/150 < 0.81:
+                self.ketelitian = "Cukup"
+            else:
+                self.ketelitian = "Baik"
+            self.rekap.write(4, 14, self.ketelitian, self.border)
+
+            if self.AAresult < 6:
+                self.konsentrasi = "Kurang"
+            elif self.AAresult < 9:
+                self.konsentrasi = "Cukup"
+            else:
+                self.konsentrasi = "Baik"
+            self.rekap.write(4, 15, self.konsentrasi, self.border)
             self.rekap.write(4, 16, '', self.border)
             self.rekap.write(4, 17, '', self.border)
             self.rekap.write(4, 18, '', self.border)
@@ -631,5 +685,10 @@ class Ui(QtWidgets.QMainWindow):
         self.AAresult = _num
 
     def saveandquit(self):
+        try:
+            XLSDataInputTest.inst_db(self.workname)
+        except Exception as e:
+            print(str(e))
         print("Saving and closing...")
+
         QtWidgets.qApp.quit()

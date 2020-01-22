@@ -3,6 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="20f5b84d-17db-4f3c-8b46-62cd56c2b271" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AA1.py" beforeDir="false" afterPath="$PROJECT_DIR$/AA1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XLSDataInputTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/XLSDataInputTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa10.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa11.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa12.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa2.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa3.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa4.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa5.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa6.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa7.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa8.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa9.py" beforeDir="false" afterPath="$PROJECT_DIR$/aa9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/instruction/IST 3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/instruction/IST 5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_window.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +71,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="disc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="exportRekap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Psikotes" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -66,7 +83,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/disc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exportRekap.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,6 +113,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Psikotes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="premain" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Psikotes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,34 +155,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="warning" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Psikotes" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/warning.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main_window" />
         <item itemvalue="Python.XLSDataInputTest" />
+        <item itemvalue="Python.exportRekap" />
         <item itemvalue="Python.premain" />
-        <item itemvalue="Python.warning" />
-        <item itemvalue="Python.disc" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +204,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="444" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579176686483">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="444" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579176686483" />
     <state x="102" y="110" width="1146" height="528" key="DiffContextDialog" timestamp="1575777173867">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -195,25 +216,29 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1575777145147" />
-    <state width="1308" height="176" key="GridCell.Tab.0.bottom" timestamp="1575783601977">
+    <state width="1345" height="191" key="GridCell.Tab.0.bottom" timestamp="1579688674541">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
-    <state width="1308" height="176" key="GridCell.Tab.0.center" timestamp="1575783601977">
+    <state width="1345" height="191" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579688674541" />
+    <state width="1345" height="191" key="GridCell.Tab.0.center" timestamp="1579688674541">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
-    <state width="1308" height="176" key="GridCell.Tab.0.left" timestamp="1575783601977">
+    <state width="1345" height="191" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579688674541" />
+    <state width="1345" height="191" key="GridCell.Tab.0.left" timestamp="1579688674541">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
-    <state width="1308" height="176" key="GridCell.Tab.0.right" timestamp="1575783601977">
+    <state width="1345" height="191" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579688674541" />
+    <state width="1345" height="191" key="GridCell.Tab.0.right" timestamp="1579688674541">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1308" height="176" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1575783601977" />
-    <state x="378" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1575775519289">
+    <state width="1345" height="191" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579688674541" />
+    <state x="378" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1579681982053">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="378" y="206" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1575775519289" />
+    <state x="378" y="206" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579681982053" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579686512578">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1579686512578" />
   </component>
 </project>

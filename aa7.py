@@ -6,7 +6,7 @@ import sys
 from aa8 import Ui as ArmyAlpha8
 import xlsxwriter
 
-DURATION_INT = 10
+DURATION_INT = 13
 class Ui(QtWidgets.QMainWindow):
     def __init__(self,res, workbook):
         super(Ui, self).__init__()

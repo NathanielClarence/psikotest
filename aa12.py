@@ -6,7 +6,7 @@ import sys
 import xlsxwriter
 import datetime
 
-DURATION_INT = 25
+DURATION_INT = 28
 class Ui(QtWidgets.QMainWindow):
     def __init__(self, res, workbook):
         super(Ui, self).__init__()

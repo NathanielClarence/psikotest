@@ -1,26 +1,29 @@
 import pandas as pd
 import mysql.connector as conn
+from datetime import date
 #from numpy import isnan
 
 def inst_db(workname):
     #self.workname = workname
-    #workname = 'data/result/mmmelin_2019-11-08.xlsx'
+    #workname = 'data/result/Teste_2020-01-17.xlsx'
     datas = pd.read_excel(workname, sheet_name='REKAP', header= None)
     insert_val = []
     print(datas)
     for x in datas:
         print(datas[x][4])
         if not pd.isnull(datas[x][4]):
-            insert_val.append(datas[x][4])
+            insert_val.append(str(datas[x][4]))
         elif x==0 or x==16 or x==17 or x==18:
             pass
         else:
             insert_val.append('')
-
+    insert_val.append(str(date.today()))
     print(insert_val)
 
+    f = open("data/targetDB.txt", 'r')
+
     mydb = conn.connect(
-        host = "localhost",
+        host = f.readline(),
         user = "root",
         passwd = "root",
         database = "psikotest",

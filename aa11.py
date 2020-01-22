@@ -7,7 +7,7 @@ import math
 from aa12 import Ui as ArmyAlpha12
 import xlsxwriter
 
-DURATION_INT = 20
+DURATION_INT = 23
 class Ui(QtWidgets.QMainWindow):
     def __init__(self, res, workbook):
         super(Ui, self).__init__()
